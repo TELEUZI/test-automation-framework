@@ -22,4 +22,8 @@ public class MainPage {
     public void enterSearch(String searchString) {
         this.searchInput.sendKeys(searchString);
     }
+
+    public void submitSearch() {
+        this.searchInput.submit();
+    }
 }
