@@ -1,7 +1,6 @@
 package com.bsu.test_automation_framework_github;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -26,10 +25,5 @@ public class BasePageTest {
         driver.get(URL);
 
         mainPage = new MainPage(driver);
-    }
-
-    @AfterEach
-    public void tearDown() {
-        driver.quit();
     }
 }

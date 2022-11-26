@@ -34,47 +34,34 @@ public class AuthTest extends BasePageTest {
     @Test
     public void emptyLogin() {
         mainPage.navigateToLoginPage();
-
         authPage.enterPassword("fgffff");
         authPage.clickLogin();
-
-
         assertEquals(authPage.getErrorText(), ERROR_MESSAGE);
     }
 
     @Test
     public void emptyPassword() {
         mainPage.navigateToLoginPage();
-
         authPage.enterUsername("aaaaa");
         authPage.clickLogin();
-
-
         assertEquals(authPage.getErrorText(), ERROR_MESSAGE);
     }
 
     @Test
     public void wrongDataLogin() {
         mainPage.navigateToLoginPage();
-
         authPage.enterUsername("aaaaa");
         authPage.enterPassword("fgffff");
         authPage.clickLogin();
-
         assertEquals(authPage.getErrorText(), ERROR_MESSAGE);
     }
 
     @Test
     public void validDataLogin() {
         mainPage.navigateToLoginPage();
-
         authPage.enterUsername(validLogin);
         authPage.enterPassword(validPassword);
         authPage.clickLogin();
-
-
         assertEquals(validName, mainPage.getUsername());
     }
-
-
 }

@@ -16,16 +16,13 @@ public class SearchTest extends BasePageTest {
     public void setUp() {
         super.setUp();
         searchPage = new SearchPage(driver);
-
     }
 
     @Test
     public void validUserSearch() {
         mainPage.enterSearch(VALID_SEARCH);
         mainPage.submitSearch();
-
         searchPage.goToUsersTab();
-
         assertEquals(searchPage.getFirstUsername(), VALID_SEARCH);
     }
 
@@ -33,10 +30,7 @@ public class SearchTest extends BasePageTest {
     public void invalidUserSearch() {
         mainPage.enterSearch(INVALID_SEARCH);
         mainPage.submitSearch();
-
         searchPage.goToUsersTab();
-
         assertTrue(searchPage.getIsUserNotFound());
     }
-
 }
