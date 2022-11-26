@@ -74,48 +74,48 @@ public class AuthTest {
 
     @Test
     public void emptyLogin() {
-        mainPage.signInLink.click();
+        mainPage.navigateToLoginPage();
 
         authPage.enterPassword("fgffff");
         authPage.clickLogin();
 
 
-        assertEquals(authPage.error.getText(), (ERROR_MESSAGE));
+        assertEquals(authPage.getErrorText(), (ERROR_MESSAGE));
     }
 
     @Test
     public void emptyPassword() {
-        mainPage.signInLink.click();
+        mainPage.navigateToLoginPage();
 
         authPage.enterUsername("aaaaa");
         authPage.clickLogin();
 
 
-        assertEquals(authPage.error.getText(), (ERROR_MESSAGE));
+        assertEquals(authPage.getErrorText(), (ERROR_MESSAGE));
     }
 
     @Test
     public void wrongDataLogin() {
-        mainPage.signInLink.click();
+        mainPage.navigateToLoginPage();
 
         authPage.enterUsername("aaaaa");
         authPage.enterPassword("fgffff");
         authPage.clickLogin();
 
 
-        assertEquals(authPage.error.getText(), (ERROR_MESSAGE));
+        assertEquals(authPage.getErrorText(), (ERROR_MESSAGE));
     }
 
     @Test
     public void validDataLogin() {
-        mainPage.signInLink.click();
+        mainPage.navigateToLoginPage();
 
         authPage.enterUsername(validLogin);
         authPage.enterPassword(validPassword);
         authPage.clickLogin();
 
 
-        assertEquals(validName, mainPage.username.getText());
+        assertEquals(validName, mainPage.getUsername());
     }
 
 

@@ -16,7 +16,7 @@ public class AuthPage {
     private WebElement submitButton;
 
     @FindBy(xpath = "//*[@id=\"js-flash-container\"]/div/div/div")
-    public WebElement error;
+    private WebElement error;
 
     public AuthPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -32,5 +32,9 @@ public class AuthPage {
 
     public void clickLogin() {
         this.submitButton.click();
+    }
+
+    public String getErrorText() {
+        return this.error.getText();
     }
 }

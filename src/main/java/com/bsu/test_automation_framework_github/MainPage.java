@@ -7,16 +7,20 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
     @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/div/div/div[2]/a")
-    public WebElement signInLink;
+    private WebElement signInLink;
 
     @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/div/div/div[1]/div/div/form/label/input[1]")
-    public WebElement searchInput;
+    private WebElement searchInput;
 
     @FindBy(xpath = "/html/body/div[5]/div/aside/div/div/details/summary/span[1]")
-    public WebElement username;
+    private WebElement username;
 
     public MainPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
+    }
+
+    public void navigateToLoginPage() {
+        this.signInLink.click();
     }
 
     public void enterSearch(String searchString) {
@@ -25,5 +29,9 @@ public class MainPage {
 
     public void submitSearch() {
         this.searchInput.submit();
+    }
+
+    public String getUsername() {
+        return this.username.getText();
     }
 }
