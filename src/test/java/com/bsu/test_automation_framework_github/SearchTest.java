@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class SearchTest extends BasePageTest {
+public class SearchTest extends BaseTest {
     private final String VALID_SEARCH = "TELEUZI";
     private final String INVALID_SEARCH = "%TELEUZI$1";
 

@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class BasePageTest {
+public class BaseTest {
     private final String URL = "https://github.com/";
     protected WebDriver driver;
     protected MainPage mainPage;

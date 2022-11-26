@@ -8,7 +8,7 @@ import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AuthTest extends BasePageTest {
+public class AuthTest extends BaseTest {
     private static String validLogin;
     private static String validPassword;
     private static String validName;
