@@ -62,6 +62,6 @@ public class AuthTest extends BasePageTest {
         authPage.enterUsername(validLogin);
         authPage.enterPassword(validPassword);
         authPage.clickLogin();
-        assertEquals(validName, mainPage.getUsername());
+        assertEquals("@".concat(validName), mainPage.getUsername());
     }
 }

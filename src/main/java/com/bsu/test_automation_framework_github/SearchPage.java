@@ -7,13 +7,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SearchPage {
 
-    @FindBy(xpath = "/html/body/div[4]/main/div/div[2]/nav[1]/a[10]")
+    @FindBy(xpath = "//a[@class='menu-item'][contains(text(),\"Users\")]")
     private WebElement usersTab;
 
-    @FindBy(xpath = "//*[@id='user_search_results']/div/div/div[2]/div[1]/div[1]/a[2]")
+    @FindBy(xpath = "//*[@id='user_search_results']//a[2]")
     private WebElement username;
 
-    @FindBy(xpath = "/html/body/div[4]/main/div/div[3]/div/div/h3")
+    @FindBy(xpath = "//div[contains(@class,'codesearch-results')]//h3")
     private WebElement userNotFoundError;
 
     public SearchPage(WebDriver driver) {

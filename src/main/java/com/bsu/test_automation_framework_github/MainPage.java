@@ -6,13 +6,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
-    @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/div/div/div[2]/a")
+    @FindBy(xpath = "//a[@href='/login']")
     private WebElement signInLink;
 
-    @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/div/div/div[1]/div/div/form/label/input[1]")
+    @FindBy(xpath = "//form[@role='search']//input[@placeholder='Search GitHub']")
     private WebElement searchInput;
 
-    @FindBy(xpath = "/html/body/div[5]/div/aside/div/div/details/summary/span[1]")
+    @FindBy(xpath = "//img[contains(@alt, '@TELEUZI')]")
     private WebElement username;
 
     public MainPage(WebDriver driver) {
@@ -32,6 +32,6 @@ public class MainPage {
     }
 
     public String getUsername() {
-        return this.username.getText();
+        return this.username.getAttribute("alt");
     }
 }

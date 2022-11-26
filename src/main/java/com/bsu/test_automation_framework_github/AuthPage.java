@@ -12,10 +12,10 @@ public class AuthPage {
     @FindBy(id = "password")
     private WebElement passwordInput;
 
-    @FindBy(xpath = "//*[@id='login']/div[4]/form/div/input[11]")
+    @FindBy(xpath = "//*[@id='login']//input[@type='submit']")
     private WebElement submitButton;
 
-    @FindBy(xpath = "//*[@id='js-flash-container']/div/div/div")
+    @FindBy(xpath = "//div[@role='alert']")
     private WebElement error;
 
     public AuthPage(WebDriver driver) {
