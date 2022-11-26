@@ -6,10 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AuthPage {
-    @FindBy(xpath = "//*[@id='login_field']")
+    @FindBy(id = "login_field")
     private WebElement usernameInput;
 
-    @FindBy(xpath = "//*[@id='password']")
+    @FindBy(id = "password")
     private WebElement passwordInput;
 
     @FindBy(xpath = "//*[@id='login']/div[4]/form/div/input[11]")
