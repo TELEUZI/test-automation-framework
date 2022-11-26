@@ -7,8 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SearchTest extends BaseTest {
-    private final String VALID_SEARCH = "TELEUZI";
-    private final String INVALID_SEARCH = "%TELEUZI$1";
 
     private SearchPage searchPage;
 
@@ -20,15 +18,17 @@ public class SearchTest extends BaseTest {
 
     @Test
     public void validUserSearch() {
-        mainPage.enterSearch(VALID_SEARCH);
+        String validSearch = "TELEUZI";
+        mainPage.enterSearch(validSearch);
         mainPage.submitSearch();
         searchPage.goToUsersTab();
-        assertEquals(searchPage.getFirstUsername(), VALID_SEARCH);
+        assertEquals(searchPage.getFirstUsername(), validSearch);
     }
 
     @Test
     public void invalidUserSearch() {
-        mainPage.enterSearch(INVALID_SEARCH);
+        String invalidSearch = "%TELEUZI$1";
+        mainPage.enterSearch(invalidSearch);
         mainPage.submitSearch();
         searchPage.goToUsersTab();
         assertTrue(searchPage.getIsUserNotFound());
