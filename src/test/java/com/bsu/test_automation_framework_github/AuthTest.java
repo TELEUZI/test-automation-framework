@@ -13,7 +13,7 @@ public class AuthTest extends BaseTest {
     private static String validPassword;
     private static String validName;
     private final String ERROR_MESSAGE = "Incorrect username or password.";
-    private AuthPage authPage;
+    private LoginStep loginStep;
 
     @BeforeAll
     public static void readProperties() {
@@ -28,40 +28,34 @@ public class AuthTest extends BaseTest {
     @BeforeEach
     public void setUp() {
         super.setUp();
-        authPage = new AuthPage(driver);
+        loginStep = new LoginStep(driver);
     }
 
     @Test
     public void emptyLogin() {
         mainPage.navigateToLoginPage();
-        authPage.enterPassword(Util.generateRandomName());
-        authPage.clickLogin();
-        assertEquals(authPage.getErrorText(), ERROR_MESSAGE);
+        loginStep.fillLoginForm("", Util.generateRandomName());
+        assertEquals(loginStep.getErrorText(), ERROR_MESSAGE);
     }
 
     @Test
     public void emptyPassword() {
         mainPage.navigateToLoginPage();
-        authPage.enterUsername(Util.generateRandomNameOfLength(6));
-        authPage.clickLogin();
-        assertEquals(authPage.getErrorText(), ERROR_MESSAGE);
+        loginStep.fillLoginForm(Util.generateRandomNameOfLength(6), "");
+        assertEquals(loginStep.getErrorText(), ERROR_MESSAGE);
     }
 
     @Test
     public void wrongDataLogin() {
         mainPage.navigateToLoginPage();
-        authPage.enterUsername(Util.generateRandomNameOfLength(8));
-        authPage.enterPassword(Util.generateRandomNameOfLength(8));
-        authPage.clickLogin();
-        assertEquals(authPage.getErrorText(), ERROR_MESSAGE);
+        loginStep.fillLoginForm(Util.generateRandomNameOfLength(8), Util.generateRandomNameOfLength(8));
+        assertEquals(loginStep.getErrorText(), ERROR_MESSAGE);
     }
 
     @Test
     public void validDataLogin() {
         mainPage.navigateToLoginPage();
-        authPage.enterUsername(validLogin);
-        authPage.enterPassword(validPassword);
-        authPage.clickLogin();
+        loginStep.fillLoginForm(validLogin, validPassword);
         assertEquals("@".concat(validName), mainPage.getUsername());
     }
 }
