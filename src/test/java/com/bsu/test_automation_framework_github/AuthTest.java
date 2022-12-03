@@ -34,7 +34,7 @@ public class AuthTest extends BaseTest {
     @Test
     public void emptyLogin() {
         mainPage.navigateToLoginPage();
-        authPage.enterPassword("fgffff");
+        authPage.enterPassword(Util.generateRandomName());
         authPage.clickLogin();
         assertEquals(authPage.getErrorText(), ERROR_MESSAGE);
     }
@@ -42,7 +42,7 @@ public class AuthTest extends BaseTest {
     @Test
     public void emptyPassword() {
         mainPage.navigateToLoginPage();
-        authPage.enterUsername("aaaaa");
+        authPage.enterUsername(Util.generateRandomNameOfLength(6));
         authPage.clickLogin();
         assertEquals(authPage.getErrorText(), ERROR_MESSAGE);
     }
@@ -50,8 +50,8 @@ public class AuthTest extends BaseTest {
     @Test
     public void wrongDataLogin() {
         mainPage.navigateToLoginPage();
-        authPage.enterUsername("aaaaa");
-        authPage.enterPassword("fgffff");
+        authPage.enterUsername(Util.generateRandomNameOfLength(8));
+        authPage.enterPassword(Util.generateRandomNameOfLength(8));
         authPage.clickLogin();
         assertEquals(authPage.getErrorText(), ERROR_MESSAGE);
     }
