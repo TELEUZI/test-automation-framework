@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public class Util {
     public static Properties readProperties() {
-        try (InputStream input = Util.class.getClassLoader().getResourceAsStream("config.properties")) {
+        try (InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties")) {
 
             Properties properties = new Properties();
 

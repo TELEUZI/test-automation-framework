@@ -22,6 +22,8 @@ public class AuthTest extends BaseTest {
             validLogin = properties.getProperty("email");
             validPassword = properties.getProperty("password");
             validName = properties.getProperty("username");
+            System.out.println(validName + " NAME");
+
         }
     }
 
