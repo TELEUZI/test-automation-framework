@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Dec 03 09:58:31 GMT 2022","Sat Dec 03 09:58:34 GMT 2022","3225","","com.bsu.test_automation_framework_github.AuthTest","","com.bsu.test_automation_framework_github.AuthTest","wrongDataLogin","wrongDataLogin()",""
+"broken","Sat Dec 03 09:58:19 GMT 2022","Sat Dec 03 09:58:28 GMT 2022","8384","","com.bsu.test_automation_framework_github.AuthTest","","com.bsu.test_automation_framework_github.AuthTest","validDataLogin","validDataLogin()",""
+"passed","Sat Dec 03 09:58:07 GMT 2022","Sat Dec 03 09:58:13 GMT 2022","6144","","com.bsu.test_automation_framework_github.SearchTest","","com.bsu.test_automation_framework_github.SearchTest","validUserSearch","validUserSearch()",""
+"passed","Sat Dec 03 09:58:13 GMT 2022","Sat Dec 03 09:58:16 GMT 2022","3093","","com.bsu.test_automation_framework_github.SearchTest","","com.bsu.test_automation_framework_github.SearchTest","invalidUserSearch","invalidUserSearch()",""
+"passed","Sat Dec 03 09:58:16 GMT 2022","Sat Dec 03 09:58:19 GMT 2022","3011","","com.bsu.test_automation_framework_github.AuthTest","","com.bsu.test_automation_framework_github.AuthTest","emptyPassword","emptyPassword()",""
+"passed","Sat Dec 03 09:58:28 GMT 2022","Sat Dec 03 09:58:31 GMT 2022","3398","","com.bsu.test_automation_framework_github.AuthTest","","com.bsu.test_automation_framework_github.AuthTest","emptyLogin","emptyLogin()",""
